@@ -1,0 +1,60 @@
+# Copyright (C) 2018 Ralf Hortt
+# This file is distributed under the same license as the WordPress Card Block plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress Card Block 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-card-block\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2018-08-27T20:59:42+00:00\n"
+"PO-Revision-Date: 2018-08-27 23:02+0200\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Domain: wp-card-block\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de\n"
+
+#. Plugin Name of the plugin
+msgid "WordPress Card Block"
+msgstr "WordPress Card Block"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://horttcore.de"
+msgstr "https://horttcore.de"
+
+#. Description of the plugin
+msgid "A WordPress Gutenberg Card Block"
+msgstr "Ein WordPress Gutenberg Card Block"
+
+#. Author of the plugin
+msgid "Ralf Hortt"
+msgstr "Ralf Hortt"
+
+#: blocks/card/index.js:17
+msgid "Card"
+msgstr "Card"
+
+#: blocks/card/index.js:67 blocks/card/index.js:68
+msgid "Image"
+msgstr "Bild"
+
+#: blocks/card/index.js:80
+msgid "Remove image"
+msgstr "Bild entfernen"
+
+#: blocks/card/index.js:100
+msgid "Lorem ipsum…"
+msgstr "Lorem ipsum…"
+
+#: blocks/card/index.js:111
+msgid ""
+"…dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor "
+"invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero "
+"eos et accusam et justo duo dolores et ea rebum."
+msgstr ""
+"... dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod "
+"tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "
+"Bei Vero EOS et Anklage am et Justo Duo Dolores et EA rebum."
