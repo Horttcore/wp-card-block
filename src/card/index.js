@@ -1,4 +1,9 @@
 /**
+ * Styling
+ */
+import './editor.sass'
+
+/**
  * Internal block libraries
  */
 const { __ } = wp.i18n;

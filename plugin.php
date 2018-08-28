@@ -21,16 +21,16 @@ defined('ABSPATH') || exit;
  * Enqueue block script and backend stylesheet.
  */
 add_action( 'enqueue_block_editor_assets', function() {
-	wp_enqueue_script( 'wp-card-block', plugins_url( 'assets/js/editor.blocks.js', __FILE__ ), [ 'wp-blocks', 'wp-element' ] );
-	wp_enqueue_style( 'wp-card-block-editor', plugins_url( 'assets/css/editor.blocks.css', __FILE__ ) );
+	wp_enqueue_script( 'wp-card-block', plugins_url( 'dist/js/editor.blocks.js', __FILE__ ), [ 'wp-blocks', 'wp-element' ] );
+	// wp_enqueue_style( 'wp-card-block-editor', plugins_url( 'assets/css/editor.blocks.css', __FILE__ ) );
 } );
 
 /**
  * Enqueue styles for backend and frontend.
  */
-add_action( 'enqueue_block_assets', function() {
-	wp_enqueue_style( 'wp-card-block-frontend', plugins_url( 'assets/css/frontend.blocks.css', __FILE__ ) );
-} );
+// add_action( 'enqueue_block_assets', function() {
+// 	wp_enqueue_style( 'wp-card-block-frontend', plugins_url( 'dist/css/frontend.blocks.css', __FILE__ ) );
+// } );
 
 /**
  * Load translation
