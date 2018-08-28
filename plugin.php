@@ -7,7 +7,7 @@
  * Author URI:      https://horttcore.de
  * Text Domain:     wp-card-block
  * Domain Path:     /languages
- * Version:         0.1.1
+ * Version:         0.2.0
  *
  * @package         Horttcore/WP-Card-Block
  */
