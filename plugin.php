@@ -21,7 +21,7 @@ defined('ABSPATH') || exit;
  * Enqueue block script and backend stylesheet.
  */
 add_action( 'enqueue_block_editor_assets', function() {
-	wp_enqueue_script( 'wp-card-block', plugins_url( 'dist/js/editor.blocks.js', __FILE__ ), [ 'wp-blocks', 'wp-element' ] );
+	wp_enqueue_script( 'wp-card-block', plugins_url( 'dist/js/editor.blocks.js', __FILE__ ), [], filemtime( plugin_dir_path( __FILE__ ) . 'dist/js/editor.blocks.js' ), TRUE );
 	// wp_enqueue_style( 'wp-card-block-editor', plugins_url( 'assets/css/editor.blocks.css', __FILE__ ) );
 } );
 
