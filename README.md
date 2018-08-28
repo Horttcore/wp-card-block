@@ -15,6 +15,11 @@ A WordPress Gutenberg card block
 
 ## Changelog
 
+### v0.2 - 29.09.2018
+
+* Replace webpack with laravel-mix
+* Add `Edit image` toolbar control
+
 ### v0.1.1 - 28.08.2018
 
 * Update dependencies
