@@ -15,6 +15,10 @@ A WordPress Gutenberg card block
 
 ## Changelog
 
-### v0.1.0
+### v0.1.1 - 28.08.2018
+
+* Update dependencies
+
+### v0.1.0 - 27.08.2018
 
 * Initial release

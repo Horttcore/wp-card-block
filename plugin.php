@@ -1,13 +1,13 @@
 <?php
 /**
- * Plugin Name:     WordPress Card Block
+ * Plugin Name:     WP Card Block
  * Plugin URI:      https://horttcore.de
  * Description:     A WordPress Gutenberg Card Block
  * Author:          Ralf Hortt
  * Author URI:      https://horttcore.de
  * Text Domain:     wp-card-block
  * Domain Path:     /languages
- * Version:         0.1.0
+ * Version:         0.1.1
  *
  * @package         Horttcore/WP-Card-Block
  */
