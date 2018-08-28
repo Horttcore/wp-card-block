@@ -9,7 +9,7 @@ import './editor.sass'
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 const { registerBlockType } = wp.blocks;
-const { MediaPlaceholder, BlockControls, RichText } = wp.editor;
+const { MediaPlaceholder, MediaUpload, BlockControls, RichText } = wp.editor;
 const { IconButton, Toolbar, TextControl } = wp.components;
 
 /**
@@ -63,62 +63,82 @@ registerBlockType('horttcore/card', {
 		};
 		const classes = 'component-card ' + className;
 		return (
-			<section className={classes}>
-				<figure className="card__image">
-					{!imgId ? (
-						<MediaPlaceholder
-							icon="format-image"
-							labels={ {
-								title: __( 'Image', 'wp-card-block' ),
-								headline: __( 'Image', 'wp-card-block' ),
-							} }
-							onSelect={onSelectImg}
-							accept="image/*"
-							type="image"
-						/>
-					) : (
-						<Fragment>
-							<img src={imgSrc} alt={imgAlt} />
-							{isSelected ? (
-								<IconButton
-									className="remove-image"
-									label={ __( 'Remove image', 'wp-card-block' ) }
-									onClick={() =>
-										setAttributes({
-											imgSrc: null,
-											imgId: null,
-											imgAlt: null
-										})
-									}
-									icon="no-alt"
-								/>
-							) : (
-								''
-							)}
-						</Fragment>
-					)}
-				</figure>
-				<header className="card__header">
-					<h1 className="card__title">
-						<RichText
-							value={headline}
-							placeholder={ __( 'Lorem ipsum…', 'wp-card-block' ) }
-							keepPlaceholderOnFocus
-							onChange={headline => setAttributes({ headline })}
-						/>
-					</h1>
-				</header>
-				<div className="card__body">
-					<RichText
-						tagName="div"
-						value={body}
-						multiline="p"
-						placeholder={ __( '…dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.', 'wp-card-block' ) }
-						keepPlaceholderOnFocus
-						onChange={body => setAttributes({ body })}
-					/>
-				</div>
-			</section>
+            <Fragment>
+                <BlockControls>
+    				<Toolbar>
+    					<MediaUpload
+    						onSelect={ onSelectImg }
+    						type="image"
+    						value={ imgId }
+    						render={ ( { open } ) => (
+    							<IconButton
+    								className="components-toolbar__control"
+    								label={ __( 'Edit image' ) }
+    								icon="edit"
+    								onClick={ open }
+    							/>
+    						) }
+    					/>
+    				</Toolbar>
+    			</BlockControls>
+
+    			<section className={classes}>
+    				<figure className="card__image">
+    					{!imgId ? (
+    						<MediaPlaceholder
+    							icon="format-image"
+    							labels={ {
+    								title: __( 'Image', 'wp-card-block' ),
+    								headline: __( 'Image', 'wp-card-block' ),
+    							} }
+    							onSelect={onSelectImg}
+    							accept="image/*"
+    							type="image"
+    						/>
+    					) : (
+    						<Fragment>
+    							<img src={imgSrc} alt={imgAlt} />
+    							{isSelected ? (
+    								<IconButton
+    									className="remove-image"
+    									label={ __( 'Remove image', 'wp-card-block' ) }
+    									onClick={() =>
+    										setAttributes({
+    											imgSrc: null,
+    											imgId: null,
+    											imgAlt: null
+    										})
+    									}
+    									icon="no-alt"
+    								/>
+    							) : (
+    								''
+    							)}
+    						</Fragment>
+    					)}
+    				</figure>
+    				<header className="card__header">
+    					<h1 className="card__title">
+    						<RichText
+    							value={headline}
+    							placeholder={ __( 'Lorem ipsum…', 'wp-card-block' ) }
+    							keepPlaceholderOnFocus
+    							onChange={headline => setAttributes({ headline })}
+    						/>
+    					</h1>
+    				</header>
+    				<div className="card__body">
+    					<RichText
+    						tagName="div"
+    						value={body}
+    						multiline="p"
+    						placeholder={ __( '…dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.', 'wp-card-block' ) }
+    						keepPlaceholderOnFocus
+    						onChange={body => setAttributes({ body })}
+    					/>
+    				</div>
+    			</section>
+            </Fragment>
 		);
 	},
 	save: props => {
