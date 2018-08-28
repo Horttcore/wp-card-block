@@ -4,7 +4,7 @@
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 const { registerBlockType } = wp.blocks;
-const { MediaPlaceholder, BlockControls, RichText } = wp.editor;
+const { MediaPlaceholder, BlockControls, RichText, URLInput } = wp.editor;
 const { IconButton, Toolbar, TextControl } = wp.components;
 
 /**
@@ -41,10 +41,20 @@ registerBlockType('horttcore/card', {
 			source: 'children',
 			selector: '.card__body'
 		},
+		buttonText: {
+			type: 'string',
+			selector: '.card__button'
+		},
+		buttonLink: {
+			type: 'string',
+            source: 'attribute',
+            attribute: 'href',
+            selector: '.card__button',
+		}
 	},
 	edit: props => {
 		const {
-			attributes: { headline, imgSrc, imgId, imgAlt, body },
+			attributes: { headline, imgSrc, imgId, imgAlt, body, buttonText, buttonLink },
 			className,
 			setAttributes,
 			isSelected
@@ -113,6 +123,36 @@ registerBlockType('horttcore/card', {
 						onChange={body => setAttributes({ body })}
 					/>
 				</div>
+				<footer className="card__footer">
+					<RichText
+						tagName="span"
+						className="button"
+						label={ __( 'Button Text', 'wp-card-block' ) }
+						value={ buttonText }
+						placeholder={ __( 'Button Text', 'wp-card-block' ) }
+						keepPlaceholderOnFocus
+						onChange={ buttonText => setAttributes( { buttonText } ) }
+					/>
+					{ isSelected && (
+						<Fragment>
+                            <form
+                                className="blocks-format-toolbar__link-modal-line blocks-format-toolbar__link-modal-line"
+                                onSubmit={ event => event.preventDefault() }
+                            >
+                                <URLInput
+                                    className="url"
+                                    value={ buttonLink }
+                                    onChange={ buttonLink => setAttributes( { buttonLink } ) }
+                                />
+                                <IconButton
+                                    icon="editor-break"
+                                    label={ __( 'Save', 'wp-card-block' ) }
+                                    type="submit"
+                                />
+                            </form>
+                        </Fragment>
+	                ) }
+				</footer>
 			</section>
 		);
 	},
@@ -122,8 +162,12 @@ registerBlockType('horttcore/card', {
 			imgSrc,
 			imgAlt,
 			body,
-			headline
+			headline,
+			buttonText,
+			buttonLink
 		} = props.attributes;
+		const hasButtonText = ( buttonText.length > 0 ) ? true : false;
+
 		return (
 			<section className={className}>
 				<figure className="card__image">
@@ -135,6 +179,9 @@ registerBlockType('horttcore/card', {
 				<div class="card__body">
 					{ body }
 				</div>
+                <footer className="card__footer">
+					<a className="card__button" href={ buttonLink }>{ buttonText }</a>
+				</footer>
 			</section>
 		);
 	}
