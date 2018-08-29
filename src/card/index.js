@@ -223,7 +223,7 @@ registerBlockType('horttcore/card', {
 
         const classes = 'component-card ' + className;
 
-        const hasButtonText = ( buttonText );
+        const hasButtonText = ( buttonText.length > 0 );
 
         return (
             <section className={classes}>
