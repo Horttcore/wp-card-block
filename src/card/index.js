@@ -223,15 +223,24 @@ registerBlockType('horttcore/card', {
 
         const classes = 'component-card ' + className;
 
+        const hasButtonText = ( buttonText );
+
         return (
             <section className={classes}>
                 <figure className="card__image">
                     <img src={imgSrc} alt={imgAlt} />
                 </figure>
-                <header class="card__header">
-                    <h1 class="card__title">{headline}</h1>
+                <header className="card__header">
+                    <h1 className="card__title">{headline}</h1>
                 </header>
-                <div class="card__body">{body}</div>
+                <div className="card__body">{body}</div>
+                { hasButtonText ? (
+                    <footer className="card__footer">
+                        <a class="card__button" href={buttonLink}>
+                            {buttonText}
+                        </a>
+                    </footer>
+                ) : ('') }
             </section>
         );
     }
