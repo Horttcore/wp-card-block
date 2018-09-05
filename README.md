@@ -15,6 +15,10 @@ A WordPress Gutenberg card block
 
 ## Changelog
 
+### v0.3 - 05.10.2018
+
+* Add card footer with button
+
 ### v0.2 - 29.09.2018
 
 * Replace webpack with laravel-mix
