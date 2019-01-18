@@ -13,6 +13,16 @@ A WordPress Gutenberg card block
 * English
 * German
 
+## Development
+
+* `npm install`
+* `npm run watch`
+
+## Production
+
+* `npm install`
+* `npm run production`
+
 ## Changelog
 
 ### v0.3 - 05.10.2018
