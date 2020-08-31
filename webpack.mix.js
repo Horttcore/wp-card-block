@@ -12,6 +12,4 @@ let mix = require('laravel-mix');
  */
 
 mix.react('src/index.js', 'dist/js/editor.blocks.js')
-    // .sass('src/card/editor.sass', 'dist/css/editor.blocks.css')
-    .sass('src/card/frontend.sass', 'dist/css/frontend.blocks.css')
     .sourceMaps();
